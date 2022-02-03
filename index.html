@@ -9,17 +9,28 @@
 </head>
 <body>
     <h1>Start Game!</h1>
-    <div class="main">
-        
-        <figure>
-            <img src="./images/rock.png" alt="image of hand with a rock sign" class="rock">
-        </figure>
-        <figure>
-            <img src="./images/paper.png" alt="image of hand with a paper sign" class="paper">
-        </figure>
-        <figure>
-            <img src="./images/scissor.png" alt="image of hand with a paper sign" class="scissor">
-        </figure>
+    <div class="container">
+        <div class="main"> 
+            <figure>
+                <img src="./images/rock.png" onclick="playerSelected()" alt="image of hand with a rock sign" class="rock">
+            </figure>
+            <figure>
+                <img src="./images/paper.png" alt="image of hand with a paper sign" class="paper">
+            </figure>
+            <figure>
+                <img src="./images/scissor.png" alt="image of hand with a paper sign" class="scissor">
+            </figure>
+        </div>
+        <div class="computer">
+            <figure>
+                <img src="./images/none.jpg" alt="image choosed by computer">
+            </figure>
+        </div>
+    </div>
+    
+    <div class="result">
+        <h1>Player: 0</h1>
+        <h1>Computer: 0</h1>
     </div>
     
     <script src="script.js"></script>
