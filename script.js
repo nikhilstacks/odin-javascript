@@ -30,43 +30,49 @@ if(computerPlay() == "scissor"){
 }
 }
 
-let playerCount = 0;
-let computerCount = 0;
+let playerCount = 0; //player score 
+let computerCount = 0; //computer score
 
+//main game logic 
 function playRound(computerSelection, playerSelection){
-     if(computerSelection == "rock" && playerSelection == "scissor"){
-         ++computerCount;
-         document.querySelector(".winner").textContent = "Computer wins! 🎉"
-        document.querySelector(".result .computerScore").textContent = `Computer: ${computerCount}`;
-     } 
-     if(computerSelection == "rock" && playerSelection == "paper"){
-         ++playerCount;
-         document.querySelector(".winner").textContent = "Player wins! 🎉"
-         document.querySelector(".result .playerScore").textContent = `Player: ${playerCount}`;    
-     }
-     if(computerSelection == "paper" && playerSelection == "rock"){
-         ++computerCount;
-         document.querySelector(".winner").textContent = "Computer wins! 🎉"
-         document.querySelector(".result .computerScore").textContent = `Computer: ${computerCount}`;
-     }
-     if(computerSelection == "paper" && playerSelection == "scissor"){
-         ++playerCount;
-         document.querySelector(".winner").textContent = "Player wins! 🎉"
-         document.querySelector(".result .playerScore").textContent = `Player: ${playerCount}`;
-     }
-     if(computerSelection == "scissor" && playerSelection == "paper"){
-         ++computerCount;
-         document.querySelector(".winner").textContent = "Computer wins! 🎉"
-         document.querySelector(".result .computerScore").textContent = `Computer: ${computerCount}`;
-     }
-     if(computerSelection == "scissor" && playerSelection == "rock"){
-         ++playerCount;
-         document.querySelector(".winner").textContent = "Player wins! 🎉"
-         document.querySelector(".result .playerScore").textContent = `Player: ${playerCount}`;
-     }
-     if(computerSelection == playerSelection){
-        document.querySelector(".winner").textContent = "Match Drawn";
-     }
+    if(playerCount < 5 && computerCount < 5){
+        if(computerSelection == "rock" && playerSelection == "scissor"){
+            computerCount++;
+            document.querySelector(".winner").textContent = "Computer wins! 🎉"
+           document.querySelector(".result .computerScore").textContent = `Computer: ${computerCount}`;
+        } 
+        if(computerSelection == "rock" && playerSelection == "paper"){
+            playerCount++;
+            document.querySelector(".winner").textContent = "Player wins! 🎉"
+            document.querySelector(".result .playerScore").textContent = `Player: ${playerCount}`;    
+        }
+        if(computerSelection == "paper" && playerSelection == "rock"){
+            computerCount++;
+            document.querySelector(".winner").textContent = "Computer wins! 🎉"
+            document.querySelector(".result .computerScore").textContent = `Computer: ${computerCount}`;
+        }
+        if(computerSelection == "paper" && playerSelection == "scissor"){
+            playerCount++;
+            document.querySelector(".winner").textContent = "Player wins! 🎉"
+            document.querySelector(".result .playerScore").textContent = `Player: ${playerCount}`;
+        }
+        if(computerSelection == "scissor" && playerSelection == "paper"){
+            computerCount++;
+            document.querySelector(".winner").textContent = "Computer wins! 🎉"
+            document.querySelector(".result .computerScore").textContent = `Computer: ${computerCount}`;
+        }
+        if(computerSelection == "scissor" && playerSelection == "rock"){
+            playerCount++;
+            document.querySelector(".winner").textContent = "Player wins! 🎉"
+            document.querySelector(".result .playerScore").textContent = `Player: ${playerCount}`;
+        }
+        if(computerSelection == playerSelection){
+           document.querySelector(".winner").textContent = "Match Drawn";
+        }
+    } else {
+        alert(`final scores are Computer: ${computerCount} and Player: ${playerCount}`);
+    }
+    
 }
 
 
