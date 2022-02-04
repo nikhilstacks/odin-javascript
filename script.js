@@ -13,39 +13,79 @@ const computerPlay = () => {
     return playerChoice;
 }
 
-const computerSelection = computerPlay(); //option selected randomly by computer
 
 // for setting the image for the computer selection 
-
 const computerImage = () => {
-if(computerSelection == "rock"){
+if(computerPlay() == "rock"){
     document.querySelector(".computer img").setAttribute("src", "./images/rock.png");
+    return "rock";
 }
-if(computerSelection == "paper"){
+if(computerPlay() == "paper"){
     document.querySelector(".computer img").setAttribute("src", "./images/paper.png");
+    return "paper";
 }
-if(computerSelection == "scissor"){
+if(computerPlay() == "scissor"){
     document.querySelector(".computer img").setAttribute("src", "./images/scissor.png");
+    return "scissor";
 }
 }
+
+let playerCount = 0;
+let computerCount = 0;
 
 function playRound(computerSelection, playerSelection){
-    
+     if(computerSelection == "rock" && playerSelection == "scissor"){
+         ++computerCount;
+         document.querySelector(".winner").textContent = "Computer wins! 🎉"
+        document.querySelector(".result .computerScore").textContent = `Computer: ${computerCount}`;
+     } 
+     if(computerSelection == "rock" && playerSelection == "paper"){
+         ++playerCount;
+         document.querySelector(".winner").textContent = "Player wins! 🎉"
+         document.querySelector(".result .playerScore").textContent = `Player: ${playerCount}`;    
+     }
+     if(computerSelection == "paper" && playerSelection == "rock"){
+         ++computerCount;
+         document.querySelector(".winner").textContent = "Computer wins! 🎉"
+         document.querySelector(".result .computerScore").textContent = `Computer: ${computerCount}`;
+     }
+     if(computerSelection == "paper" && playerSelection == "scissor"){
+         ++playerCount;
+         document.querySelector(".winner").textContent = "Player wins! 🎉"
+         document.querySelector(".result .playerScore").textContent = `Player: ${playerCount}`;
+     }
+     if(computerSelection == "scissor" && playerSelection == "paper"){
+         ++computerCount;
+         document.querySelector(".winner").textContent = "Computer wins! 🎉"
+         document.querySelector(".result .computerScore").textContent = `Computer: ${computerCount}`;
+     }
+     if(computerSelection == "scissor" && playerSelection == "rock"){
+         ++playerCount;
+         document.querySelector(".winner").textContent = "Player wins! 🎉"
+         document.querySelector(".result .playerScore").textContent = `Player: ${playerCount}`;
+     }
+     if(computerSelection == playerSelection){
+        document.querySelector(".winner").textContent = "Match Drawn";
+     }
 }
-//ye nhi chal raha hai continue from this function
-const playerSelected = () => {
-    if(this.className == "rock"){
-        console.log("rock");
+
+
+//function for getting the classname of the clicked image
+const playerSelected = (className) => {
+    if(className == "rock"){
+        playRound(computerImage(), className);
+        return "rock";
     } else
-    if(this.className == "paper"){
+    if(className == "paper"){
+        playRound(computerImage(), className);
         return "paper";
     } else {
+        playRound(computerImage(), className);
         return "scissor";
     }
 }
 
 
-playRound(computerPlay(), playerSelected())
 
 
 
