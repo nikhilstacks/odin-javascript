@@ -90,10 +90,3 @@ const playerSelected = (className) => {
         return "scissor";
     }
 }
-
-
-
-
-
-
-
