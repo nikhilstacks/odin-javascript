@@ -1,3 +1,9 @@
+/*i created a branch named addingUI in git and push this branch in git hub
+i am not changing any code here in this branch becuase i already used DOM in this tiny project
+when they give this task they don't told us about any of the DOM methods but i applied them
+as i know little bit of them and i am writing this comment because i want to learn how i can
+make a request from github to me so this is only to make changes*/
+
 const computerPlay = () => {  
     //function for generating a random rock, paper, scissor
     const playerChoice = Math.floor(Math.random() * 3 + 1);
@@ -90,10 +96,3 @@ const playerSelected = (className) => {
         return "scissor";
     }
 }
-
-
-
-
-
-
-
